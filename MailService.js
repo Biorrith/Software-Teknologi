@@ -13,12 +13,13 @@ class MailService {
       viewPath: "views"
     };
 
+
+
     this._transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
+      service: 'gmail',
       auth: {
-        user: process.env.SMTP_USER,
-        pass:  process.env.SMTP_PASSWORD
+        user: 'malthe@toettrup.dk',
+        pass: 'Gobious12'
       }
     });
 
@@ -27,7 +28,6 @@ class MailService {
   sendMail({to, subject, template, context, attachments}) {
     return this._transporter.sendMail({
         to,
-        from: process.env.FROM_EMAIL,
         subject,
         template,
         context,
