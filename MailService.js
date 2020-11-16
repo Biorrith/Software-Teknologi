@@ -18,8 +18,8 @@ class MailService {
     this._transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'malthe@toettrup.dk',
-        pass: 'Gobious12'
+        user: 'your@gmail.com', //change to your email if you want to test
+        pass: 'password' //change to your own password if you want to test
       }
     });
 
