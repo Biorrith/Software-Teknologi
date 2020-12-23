@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alpha Inbox</title>
+
+  <link href="/assets/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="table-data">
+<h2 style = "position:relative; left:20px;">Inbox</h2>
+<hr/>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Sender</th>
+        <th>Time</th>
+        <th>Subject</th>
+        <th>View</th>
+        <th>Delete</th>
+        <th>Switch Mark</th>
+    </tr>
+    
+    <%
+    if(userData.length!=0){
+    var i=1;
+    userData.reverse()
+    userData.forEach(function(data){%>
+    <tr>
+    
+    <%  if(data._read != 0){%>
+        <td><%=i; %></td>
+        <td><%=data.sender %></td>
+        <td><%=data._time %></td>
+        <td><%=data.sbjt %></td>
+        <td><a href="/viewin/<%=data.id%>">View</a></td>
+        <td><a href="/deletein/<%=data.id%>">Delete</a></td>
+        <td><a href="/markasunread/<%=data.id%>">Mark as unread</a></td>
+    
+    <% } else { %>
+    
+        <td><b><%=i; %></b></td>
+        <td><b><%=data.sender %></b></td>
+        <td><b><%=data._time %></b></td>
+        <td><b><%=data.sbjt %></b></td>
+    
+        <td><a href="/viewin/<%=data.id%>">View</a></td>
+        <td><a href="/deletein/<%=data.id%>">Delete</a></td>
+        <td><a href="/markasread/<%=data.id%>">Mark as read</a></td>
+    <% } %>
+    </tr> 
+    <%  i++; }) %>
+    <% } else{ %>
+        <tr>
+            <td colspan="7">No Data Found</td>
+        </tr>
+    <% } %>
+</table>
+    </div>
+</body>
+</html>
+
+<button style = "position:relative; left:20px; width:150px;" onclick="window.location.href='/homepage'">Go to homepage</button></br>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Alphamail Login
+    </title>
+    <link href="/assets/main.css" rel="stylesheet" type="text/css">
+
+  </head>
+
+
+  <body>
+      <div>
+        <h1>
+          <span style='position:relative; left:20px; font-size:50px;'>Welcome to Alphamail</span>
+        </h1>
+        <hr/>
+          
+
+        <h2 style = "position:relative; left:20px;">
+          Log in
+        </h2>
+          <form action="/login" method ="POST">
+                <label style = "position:relative; left:20px; top:-20px;"> Email:</label><br>
+                <input style = "width: 1000px; position:relative; left:20px; top:-60px;" type="text" placeholder="user@alphamail.com" name="email" required><br/>
+                <label style = "position:relative; left:20px; top:-20px;"> Password:</label><br>
+                <input style = "width: 1000px; position:relative; left:20px; top:-60px;" type="password" placeholder="password" name="password" id="myInput"><br><br>
+
+
+            <!-- Toggle 'Show Password' -->
+            <input style = "left:20px; top:-65px;" type="checkbox" id="showpsw"  onclick="showPW()"> 
+            <label style = "left:20px; top:-65px;" for="showpsw"> Show password</label><br>
+            <button style = "position:relative; left:20px; top:-50px; width:150px;">Login</button>
+          </form>          
+          <!-- Script for show password -->
+          <script>
+            function showPW() {
+              var x = document.getElementById("myInput");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+            </script>          
+      </div>
+      
+    </body>
+</html>
+<button style = "position:relative; left:20px; top: -65px; width:150px;" onclick="window.location.href='/register'">Register</button> <br>
+
+<img style="position:relative; left:1100px; top:-450px" src="../pictures/thicc_boi.png" alt="The_Alpha_Mail">
