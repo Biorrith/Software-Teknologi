@@ -32,7 +32,10 @@ With the libraries installed, we now move on to install the database. For this, 
 You can skip the account setup, and just download the software right away. For the installation, follow the default setup. However, for the password you must enter ```Software_alphamail```, as this is what the server connects with.
 
 
-In mysql, chose "Create a new schema" and create one called alphamail with default settings.
+In mysql, chose "Create a new schema" and create one called alphamail with default settings:
+
+![How to make schema](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/schema.png)
+
 
 Make a new query, by clicking the button seen below:
 
