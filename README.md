@@ -50,8 +50,10 @@ CREATE TABLE \`alphamail\`.\`users\` (\`id\` INT UNSIGNED NOT NULL AUTO_INCREMEN
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 ```
 
-Now everything should be set and ready to go. In a terminal, navigate to the position of the app.js file, and run the code:
+Now everything should be set and ready to go. In a terminal, navigate to Alphamail directory, and run the code:
 
+	$ npm install mysql
+	
 	$ nodemon app.js
 
 
