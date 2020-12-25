@@ -4,18 +4,16 @@ ________________________________________________________________________________
 
 # Guide to setup the server
 
-install node.js outside of the folder. Download link:
-https://nodejs.org/en/
+install node.js outside of the folder. [Download link.](https://nodejs.org/en/)
+
 
 -Make sure you have version 2.0.6
 
 	$ npm -v
 
-Install nodemon:
+Now we need to install the libraries we used for developing the server. Install the following commands:
 
 	$ npm install -g nodemon
-
-Install sendmail in order to communicate with outside sources:
     
 	$ npm install sendmail
 
@@ -23,9 +21,10 @@ Install sendmail in order to communicate with outside sources:
 
 	$ npm install body-parser
 
+With the libraries installed, we now move on to install the database.
 
-Install mysql (bottom version):
-https://dev.mysql.com/downloads/installer/
+For this, we use mySQL. Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/):
+
 
 In mysql, chose "Create a new schema" and create one called alphamail
 with default settings.
