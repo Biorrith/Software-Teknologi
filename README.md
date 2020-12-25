@@ -53,5 +53,5 @@ Now everything should be set and ready to go. In a terminal, navigate to Alphama
 	
 	$ nodemon app.js
 
-
+Now your localhost should be up and running on localhost, port 3000.
 
