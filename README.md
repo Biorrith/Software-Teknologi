@@ -8,7 +8,7 @@ ________________________________________________________________________________
 First, install node.js - [Download link.](https://nodejs.org/en/)
 
 
-Make sure you have version 2.0.6
+Make sure you have version 6.14.8:
 
 	$ npm -v
 
