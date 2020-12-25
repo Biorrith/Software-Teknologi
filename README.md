@@ -52,7 +52,7 @@ CREATE TABLE `alphamail`.`users` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `em
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Software_alphamail'
 ```
 
-Now everything should be set and ready to go. In a terminal, navigate to Alphamail directory, and run the code:
+Now everything should be set and ready to go. In a terminal, navigate to Alphamail directory, install npm sql and run the code:
 
 	$ npm install mysql
 	
