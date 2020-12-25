@@ -1,0 +1,122 @@
+Outbox:
+<style>
+table, td, th { 
+ border: 1px solid #ddd; 
+ text-align: left; 
+} 
+table { 
+ border-collapse: collapse; 
+ width: 50%; 
+} 
+.table-data{ 
+ position: relative; 
+ left:150px; 
+ top:100px; 
+} 
+th, td { 
+ padding: 15px; 
+} 
+  </style>
+
+Inbox::
+<!--<style>
+table, td, th { 
+ border: 1px solid #ddd; 
+ text-align: left; 
+} 
+table { 
+ border-collapse: collapse; 
+ width: 50%; 
+} 
+.table-data{ 
+ position: relative; 
+ left:150px; 
+ top:100px; 
+} 
+th, td { 
+ padding: 15px; 
+} 
+  </style>-->
+
+Received::
+<style>
+table, td, th { 
+ border: 1px solid #ddd; 
+ text-align: left; 
+} 
+table { 
+ border-collapse: collapse; 
+ width: 50%; 
+} 
+.table-data{ 
+ position: relative; 
+ left:150px; 
+ top:100px; 
+} 
+th, td { 
+ padding: 15px; 
+} 
+  </style>
+
+
+Register::
+<style>
+input[type="text"]#subdomaintwo{
+    -webkit-appearance: none!important;
+    color: black;
+    text-align: right;
+    width: 100px;
+    border: 1px solid grey;
+    border-left: 0px;
+    margin: 0 0 0 -7px;
+    background: white;
+}
+input[type="text"]#subdomain{
+    -webkit-appearance: none!important;
+    width: 110px;
+    border: 1px solid gray;
+    border-right: 0px;
+    outline: none;
+}
+
+    </style>
+
+Viewin::
+<!--<style>
+table, td, th { 
+ border: 1px solid #ddd; 
+ text-align: left; 
+} 
+table { 
+ border-collapse: collapse; 
+ width: 50%; 
+} 
+.table-data{ 
+ position: relative; 
+ left:150px; 
+ top:100px; 
+} 
+th, td { 
+ padding: 15px; 
+} 
+  </style>-->
+
+Viewout::
+<!--<style>
+table, td, th { 
+ border: 1px solid #ddd; 
+ text-align: left; 
+} 
+table { 
+ border-collapse: collapse; 
+ width: 50%; 
+} 
+.table-data{ 
+ position: relative; 
+ left:150px; 
+ top:100px; 
+} 
+th, td { 
+ padding: 15px; 
+} 
+  </style>-->
