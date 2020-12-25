@@ -34,7 +34,7 @@ function getConnection(){
     host: 'localhost',
     port: '3306',
     user: 'root',
-    password: 'Sambasamba98',
+    password: 'Software_alphamail',
     database: 'alphamail'
   });
 }
