@@ -27,7 +27,7 @@ Now we need to install the libraries we used for developing the server. Install 
 	$ npm install express-session
 
 With the libraries installed, we now move on to install the database. For this, we use mySQL. Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/)
-For the instalation, 
+For the instalation, follow the default setup. However, the password you enter must be ```Software_alphamail```, as this is what the server connects with.
 
 
 In mysql, chose "Create a new schema" and create one called alphamail
