@@ -34,7 +34,7 @@ You can skip the account setup, and just download the software right away. For t
 
 Now mySQL workbench automatically opens. Under mySQL connections should be an already created connection - click it to enter it, with password ```Software_alphamail```.
 
-In mysql, chose "Create a new schema" and create one called *alphamail* with default settings:
+In mysql, choose "Create a new schema" and create one called *alphamail* with default settings:
 
 ![How to make schema](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/schema.png)
 
