@@ -30,7 +30,7 @@ Now we need to install the libraries we used for developing the server. Install 
 
 With the libraries installed, we now move on to install the database. For this, we use mySQL. 
 Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/)
-You can skip the account setup, and just download the software right away. For the installation, follow the default setup. However, for the password you must enter ```Software_alphamail```, as this is the password the server connects with.
+You can skip the account setup, and just download the software right away. For the installation, follow the developer default setup. However, for the password you must enter ```Software_alphamail```, as this is the password the server connects with.
 
 
 In mysql, chose "Create a new schema" and create one called *alphamail* with default settings:
