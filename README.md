@@ -32,10 +32,7 @@ With the libraries installed, we now move on to install the database. For this, 
 You can skip the account setup, and just download the software right away. For the installation, follow the default setup. However, for the password you must enter ```Software_alphamail```, as this is what the server connects with.
 
 
-In mysql, chose "Create a new schema" and create one called alphamail
-with default settings.
-
-Now right click the schema and make a new table, called users. 
+In mysql, chose "Create a new schema" and create one called alphamail with default settings.
 
 Make a new query, by clicking the button seen below:
 
