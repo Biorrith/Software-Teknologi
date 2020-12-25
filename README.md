@@ -15,7 +15,7 @@ Install nodemon:
 
 	$ npm install -g nodemon
 
-Install sendmail on order to communicate with outside sources:
+Install sendmail in order to communicate with outside sources:
     
 	$ npm install sendmail
 
