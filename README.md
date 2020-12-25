@@ -41,7 +41,7 @@ Make a new query, by clicking the button seen below:
 
 ![How to make new query](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/query.png)
 
-Now execute the following two commands:
+Now execute the following two commands one at a time. To execute, click the 'lightning':
 
 ```
 CREATE TABLE `alphamail`.`users` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `email` VARCHAR(255) NOT NULL, `psw` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`), UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
