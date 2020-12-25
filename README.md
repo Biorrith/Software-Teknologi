@@ -32,6 +32,7 @@ With the libraries installed, we now move on to install the database. For this, 
 Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/)
 You can skip the account setup, and just download the software right away. For the installation, follow the developer default setup. However, for the password you must enter ```Software_alphamail```, as this is the password the server connects with.
 
+Now mySQL workbench automatically opens. Under mySQL connections should be an already created connection - click it to enter it.
 
 In mysql, chose "Create a new schema" and create one called *alphamail* with default settings:
 
