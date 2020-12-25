@@ -30,9 +30,11 @@ with default settings.
 
 Now right click the schema and make a new table, called users. 
 
-CREATE TABLE \`alphamail\`.\`users\` (\`id\` INT UNSIGNED NOT NULL AUTO_INCREMENT, \`email\` VARCHAR(255) NOT NULL, \`psw\` VARCHAR(20) NOT NULL, PRIMARY KEY (\`id\`), UNIQUE INDEX \`email_UNIQUE\` (\`email\` ASC) VISIBLE);
-
 Make a new query and execute the following code:
+```
+CREATE TABLE \`alphamail\`.\`users\` (\`id\` INT UNSIGNED NOT NULL AUTO_INCREMENT, \`email\` VARCHAR(255) NOT NULL, \`psw\` VARCHAR(20) NOT NULL, PRIMARY KEY (\`id\`), UNIQUE INDEX \`email_UNIQUE\` (\`email\` ASC) VISIBLE);
+```
+
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 
 
