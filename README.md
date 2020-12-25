@@ -1,6 +1,6 @@
 # Software-Teknologi
 
-Welcome to Alphamail! In here we have multiple folders - most are old and nonfinished versions. The finished version of the code is located in the *Alphamail* folder.
+**Welcome to Alphamail!** In here we have multiple folders - most are old and nonfinished versions. The finished version of the code is located in the *Alphamail* folder.
 ________________________________________________________________________________
 
 # Setting up the server
