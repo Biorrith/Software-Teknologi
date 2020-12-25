@@ -1,24 +1,28 @@
 # Software-Teknologi
 
+________________________________________________________________________________
 
-In order to run this code, do the following:
-
+# Guide to setup the server
 
 install node.js outside of the folder. Download link:
 https://nodejs.org/en/
 
 -Make sure you have version 2.0.6
-npm -v
+
+	$ npm -v
 
 Install nodemon:
-npm install -g nodemon
+
+	$ npm install -g nodemon
 
 Install sendmail on order to communicate with outside sources:
-    $  npm install sendmail
+    
+	$ npm install sendmail
 
-    $  npm install cookie-parser
+	$ npm install cookie-parser
 
-npm install body-parser
+	$ npm install body-parser
+
 
 Install mysql (bottom version):
 https://dev.mysql.com/downloads/installer/
