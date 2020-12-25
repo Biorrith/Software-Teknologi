@@ -21,9 +21,8 @@ Now we need to install the libraries we used for developing the server. Install 
 
 	$ npm install body-parser
 
-With the libraries installed, we now move on to install the database.
-
-For this, we use mySQL. Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/):
+With the libraries installed, we now move on to install the database. For this, we use mySQL. Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/)
+For the instalation, 
 
 
 In mysql, chose "Create a new schema" and create one called alphamail
