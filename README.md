@@ -41,7 +41,7 @@ Make a new query, by clicking the button seen below:
 
 ![How to make new query](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/query.png)
 
-Now execute the following two commands one at a time. The first makes a table in which we store the users of Alphamail, the second makes sure the server can connect to the database.
+Now execute the following two commands, one at a time. The first makes a table in which we store the users of Alphamail, the second makes sure the server can connect to the database.
 To execute, click the 'lightning':
 
 ```
