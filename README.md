@@ -38,7 +38,7 @@ In mysql, chose "Create a new schema" and create one called *alphamail* with def
 ![How to make schema](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/schema.png)
 
 
-Make a new query, by clicking the button seen below:
+Make a new query by clicking the button seen below:
 
 ![How to make new query](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/query.png)
 
