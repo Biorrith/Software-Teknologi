@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 # Setting up the server
 
-First, install node.js - [Download link, take the left version reccomended for most users.](https://nodejs.org/en/)
+First, install node.js - [Download link](https://nodejs.org/en/), take the left version reccomended for most users.
 
 
 Make sure you have version 6.14.6 or newer:
