@@ -5,7 +5,7 @@ ________________________________________________________________________________
 
 # Setting up the server
 
-install node.js outside of the folder. [Download link.](https://nodejs.org/en/)
+First, install node.js - [Download link.](https://nodejs.org/en/)
 
 
 -Make sure you have version 2.0.6
