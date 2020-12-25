@@ -61,3 +61,6 @@ Now everything should be set and ready to go. In a terminal, navigate to Alphama
 
 Now your server should be up and running on localhost, port 3000.
 
+If, for some unlucky reason, nodemon is not recognized, you can also run the server with:
+
+	$ node app.js
