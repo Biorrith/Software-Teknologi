@@ -12,7 +12,7 @@ Make sure you have version 6.14.6 or newer:
 
 	$ npm -v
 
-Navigate to the *Alphamail* folder in the console.
+Download the files, and in a console navigate to the *Alphamail* directory.
 
 Now we need to install the libraries we used for developing the server. Install the following commands:
 
