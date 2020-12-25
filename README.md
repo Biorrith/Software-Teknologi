@@ -1,9 +1,9 @@
 # Software-Teknologi
 
-Welcome to Alphamail! 
+Welcome to Alphamail! In here we have multiple folders - most are old and nonfinished versions. The finished version of the code is located in the *Alphamail* folder.
 ________________________________________________________________________________
 
-# Guide to setup the server
+# Setting up the server
 
 install node.js outside of the folder. [Download link.](https://nodejs.org/en/)
 
