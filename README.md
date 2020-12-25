@@ -33,7 +33,7 @@ Now right click the schema and make a new table, called users.
 
 Make a new query and execute the following two codes:
 
-https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/query.png
+![How to make new query](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/query.png)
 
 ```
 CREATE TABLE \`alphamail\`.\`users\` (\`id\` INT UNSIGNED NOT NULL AUTO_INCREMENT, \`email\` VARCHAR(255) NOT NULL, \`psw\` VARCHAR(20) NOT NULL, PRIMARY KEY (\`id\`), UNIQUE INDEX \`email_UNIQUE\` (\`email\` ASC) VISIBLE);
