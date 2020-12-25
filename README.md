@@ -41,7 +41,8 @@ Make a new query, by clicking the button seen below:
 
 ![How to make new query](https://github.com/Biorrith/Software-Teknologi/blob/main/pictures/query.png)
 
-Now execute the following two commands one at a time. To execute, click the 'lightning':
+Now execute the following two commands one at a time. The first makes a table in which we store the users of Alphamail, the second makes sure the server can connect to the database.
+To execute, click the 'lightning':
 
 ```
 CREATE TABLE `alphamail`.`users` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `email` VARCHAR(255) NOT NULL, `psw` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`), UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
