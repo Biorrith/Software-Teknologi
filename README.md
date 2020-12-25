@@ -16,7 +16,7 @@ Download the files, and in a console navigate to the *Alphamail* directory.
 
 Now we need to install the libraries we used for developing the server. Install the following commands:
 
-	$ npm install nodemon
+	$ npm install .g nodemon
     
 	$ npm install sendmail
 
