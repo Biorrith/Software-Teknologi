@@ -35,12 +35,12 @@
                 <script>
                     function sendmail() {
                     document.msg.method = "POST";
-                    document.msg.action = "/send";
+                    document.msg.action = "/senddraft/<%=data.id%>";
                     return
                     }
                     function savedraft() {
                     document.msg.method = "POST";
-                    document.msg.action = "/savedraft";
+                    document.msg.action = "/savedraft_view/<%=data.id%>";
                     return;
                     }
                     function deletedraft() {

@@ -3,7 +3,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
 const session = require('express-session'); 
-const mysql = require('mysql')
+const mysql = require('mysql');
+const sendMailFactory = require('sendmail');
 const app = express()
 const port = 3000;
 
@@ -56,6 +57,8 @@ function saveMail_recieved(from, to, subject, mail){
   });
 }
 
+
+
 //Saves mails that get send.
 function saveMail_send(from, to, subject, mail){
   insert_position = from.slice(0, -14) + "_send"
@@ -71,6 +74,49 @@ function saveMail_send(from, to, subject, mail){
       console.log("Inserted send email successfully into database.");
   });
 }
+
+function sendMail(session_email, rcpt, subject, body){
+  console.log("trying to send an email");
+  to = rcpt
+
+  //If multiple mails, we split them into array positions in the array mails.
+  var index = 0
+  var mails = []
+  var length = to.length
+
+  for (i = 0; i < length; i++){
+    //console.log(to[i])
+    if(to[i] === ","){
+      console.log(i)
+      mails.push(to.substring(index, i))
+      if(to[i+1] == " ")
+        index = i + 2
+      else index = i+1
+    }     
+  }
+
+  mails.push(to.substring(index, length)) //Enter the last email, as that is not included in the loop.
+
+  length = mails.length
+  for(i = 0; i < length; i++){
+  if(to.substr(to.length - 13) == "alphamail.com"){
+   saveMail_recieved(session_email, mails[i], subject, body)
+  }
+  else{
+    saveMail_send(session_email, mails[i], subject, body)
+    sendmail({
+        from: session_email,
+        to: mails[i],
+        subject: subject,
+        html: body,
+      }, function(err, reply) {
+        console.log(err && err.stack);
+        console.dir(reply);
+    });
+    }
+  }
+}
+
 
 //Saves mails that get send.
 function saveMail_draft(from, to, subject, mail){
@@ -284,51 +330,56 @@ app.post('/savedraft', (req, res) => {
 
 });
 
-app.post('/send', (req, res) => {
+// Made for saving updating the viewed draft, rather than creating a new saved draft (which happened
+// before), not resulting in multiple versions of the same draft.
+app.post('/savedraft_view/:id', (req, res) => {
+  console.log("Test?! ")
+
   if (req.session.loggedin){
-  console.log("trying to send an email");
-  to = req.body.to
 
-  //If multiple mails, we split them into array positions in the array mails.
-  var index = 0
-  var mails = []
-  var length = to.length
+  const mailId = req.params.id
+  queryString = "UPDATE " + req.session.email.slice(0, -14) + "_drafts SET rcpt = ?, mail_body = ?, sbjt = ? WHERE id = ?"
+  
+  console.log(queryString)
 
-  for (i = 0; i < length; i++){
-    //console.log(to[i])
-    if(to[i] === ","){
-      console.log(i)
-      mails.push(to.substring(index, i))
-      if(to[i+1] == " ")
-        index = i + 2
-      else index = i+1
-    }     
-  }
+  getConnection().query(queryString, [req.body.to, req.body.body, req.body.subject, mailId], (err, rows, fields) => {
+    if (err) console.log(err);})
 
-  mails.push(to.substring(index, length)) //Enter the last email, as that is not included in the loop.
+    res.redirect('/homepage');
+  } else res.redirect('/')
 
-  length = mails.length
-  for(i = 0; i < length; i++){
-  if(to.substr(to.length - 13) == "alphamail.com"){
-   saveMail_recieved(req.session.email, mails[i], req.body.subject, req.body.body)
-  }
-  }
+});
 
-  saveMail_send(req.session.email, req.body.to, req.body.subject, req.body.body)
 
-  sendmail({
-      from: req.session.email,
-      to: req.body.to,
-      subject: req.body.subject,
-      html: req.body.body,
-    }, function(err, reply) {
-      console.log(err && err.stack);
-      console.dir(reply);
-  });
+app.post('/send', (req, res) => {
+
+  if (req.session.loggedin){
+    sendMail(req.session.email, req.body.to, req.body.subject, req.body.body)
 
   res.redirect('/homepage');
   } else res.redirect('/')
 });
+
+
+
+app.post('/senddraft/:id', (req, res) => {
+
+  if (req.session.loggedin){
+    sendMail(req.session.email, req.body.to, req.body.subject, req.body.body)
+    
+    console.log("Mail send successfully, trying to delete from drafts ")
+    const mailId = req.params.id
+  
+    //Delete the draft after sending!
+    queryString = "DELETE FROM " + req.session.email.slice(0, -14) + "_drafts WHERE id = ?"
+    getConnection().query(queryString, [mailId], (err, rows, fields) => {
+    if (err) console.log(err);
+    })
+
+  res.redirect('/homepage');
+  } else res.redirect('/')
+});
+
 
 app.post('/login', (req, res) => {
   const email = req.body.email;
@@ -400,6 +451,7 @@ app.post('/register', (req, res) => {
         console.log("Table created")
         });
       
+      //Table for drafts
       file_name = req.body.email + "_drafts"
       var file_setup = "CREATE TABLE "+ file_name + " (id INT KEY AUTO_INCREMENT, rcpt VARCHAR(255), _time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, mail_body TEXT, sbjt VARCHAR(255))";
       getConnection().query(file_setup, function (err, result) {  
