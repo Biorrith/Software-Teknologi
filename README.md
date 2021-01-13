@@ -51,7 +51,7 @@ To execute, click the 'lightning':
 CREATE TABLE `alphamail`.`users` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `email` VARCHAR(255) NOT NULL, `psw` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`), UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
 ```
 
-Delete the previous command, and execute the next in the same query:
+Delete the previous command, and execute the next in the same query (make sure to delete previous command):
 
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Software_alphamail'
