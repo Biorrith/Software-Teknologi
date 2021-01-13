@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Alpha</title>
+        <title>Alphamail</title>
         <link href="/assets/main.css" rel="stylesheet" type="text/css">
     </head>
 
@@ -53,7 +53,7 @@
                 <div id="Forward" style="display:none">
                     <form action="/send" method ="POST">
                         <label style = "width: 1000px; position:relative; left:20px; top:-5px;">To</label>
-                        <input type="text" style = "width: 1000px; position:relative; left:20px; top:-20px;" placeholder="To" name = "to"></br>     
+                        <input type="text" style = "width: 1000px; position:relative; left:20px; top:-20px;" maxlength="255" placeholder="To" name = "to" required></br>     
                         <input placeholder="Subject" type="hidden" value="<%=data.sbjt%>" name = "subject" hidden>
                         <input placeholder="Body" type="hidden" value="<%=data.mail_body%>" name="body" hidden>
                         <button style = "width: 150px; position:relative; left:20px; top:-5px;" >Send</button>

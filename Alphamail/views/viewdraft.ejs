@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Alpha draft</title>
+        <title>Alphamail</title>
         <link href="/assets/main.css" rel="stylesheet" type="text/css">
-    </head>
+</head>
 
     <body>
         <div class="table-data">
@@ -17,11 +17,11 @@
                     <form name="msg" method ="POST">
                         <div>
                             <label style = "width: 1000px; position:relative; left:20px;">Recipient</label>
-                            <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" placeholder="To" value="<%=data.rcpt%>" name = "to">
+                            <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" maxlength="255" placeholder="To" value="<%=data.rcpt%>" name = "to" required>
                         </div>
                         <div>
                             <label style = "width: 1000px; position:relative; left:20px;">Subject</label>
-                            <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" placeholder="Subject" value="<%=data.sbjt%>" name = "subject">
+                            <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" maxlength="255" placeholder="Subject" value="<%=data.sbjt%>" name = "subject">
                         </div>
                         <div>
                             <label style = "position:relative; left:20px;">Body</label>
