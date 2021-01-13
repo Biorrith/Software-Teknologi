@@ -23,8 +23,8 @@
           
           <form action="/register" method ="POST">
             <div>  
-                <input style = "width: 1000px; position:relative; left:20px;" type="text" placeholder="username" id="subdomain" name="email" maxlength="255" required>
-                <label style = "width: 1000px; position:relative; left:200px; top:-42px;"> @alphamail.com</label><br>
+                <input style = "width: 1000px; position:relative; left:20px;" type="text" required title = "Special characters like @ and $ not allowed." required pattern="[a-zA-Z0-9.]+" placeholder="username" id="subdomain" name="email" maxlength="255" required>
+                <label style = "width: 1000px; position:relative; left:200px; top:-36px;"> @alphamail.com</label><br>
             </div>
             <!--Making @alphamail.com after to make sure its not written.-->
             </br>

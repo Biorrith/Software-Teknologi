@@ -101,6 +101,7 @@ function sendMail(session_email, rcpt, subject, body){
   for(i = 0; i < length; i++){
   if(to.substr(to.length - 13) == "alphamail.com"){
    saveMail_recieved(session_email, mails[i], subject, body)
+   saveMail_send(session_email, mails[i], subject, body)
   }
   else{
     saveMail_send(session_email, mails[i], subject, body)
@@ -398,6 +399,7 @@ app.post('/login', (req, res) => {
       return row.psw
     })
 
+    //Compare stored password to input
     if(password == pass) {
       req.session.email = email;
       req.session.loggedin = true;
@@ -405,7 +407,6 @@ app.post('/login', (req, res) => {
       res.redirect('/homepage');}
     
     else 
-      //TODO: alert("Wrong email address or password.")
       res.redirect('/');
     
     res.end();
@@ -415,12 +416,6 @@ app.post('/login', (req, res) => {
 app.post('/register', (req, res) => {
     const alphamail = "@alphamail.com"
     const eml = req.body.email + alphamail;
-    
-    for(i = 0; i < req.body.email.length; i++){
-      if(req.body.email[i] === '@' || req.body.email[i] === '/' || req.body.email[i] === '&' || req.body.email[i] === '$')
-        return res.redirect('/register')
-    }
-
     const psw = req.body.password;
 
     queryString = "INSERT INTO users (email, psw) VALUES (?, ?)"
