@@ -28,6 +28,8 @@ Now we need to install the libraries we used for developing the server. Install 
 	$ npm install express-ejs-layouts
 
 	$ npm install express-session
+	
+	$ npm install js-sha256
 
 With the libraries installed, we now move on to install the database. For this, we use mySQL. 
 Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/)
@@ -48,7 +50,7 @@ Now execute the following two commands, one at a time. The first makes a table i
 To execute, click the 'lightning':
 
 ```
-CREATE TABLE `alphamail`.`users` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `email` VARCHAR(255) NOT NULL, `psw` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`), UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+CREATE TABLE `alphamail`.`users` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `email` VARCHAR(255) NOT NULL, `psw` VARCHAR(64) NOT NULL, PRIMARY KEY (`id`), UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
 ```
 
 Delete the previous command, and execute the next in the same query (make sure to delete previous command):
