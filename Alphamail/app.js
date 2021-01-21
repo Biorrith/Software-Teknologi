@@ -5,8 +5,12 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session'); 
 const mysql = require('mysql');
 const sendMailFactory = require('sendmail');
-const app = express()
+const app = express();
 const port = 3000;
+
+var crypto = require('crypto');
+var hash = crypto.createHash('sha256')
+
 
 // app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
@@ -57,7 +61,10 @@ function saveMail_recieved(from, to, subject, mail){
   });
 }
 
-
+function createHash(string_input){
+  hash.update(string_input);
+  return hash.digest('hex');
+}
 
 //Saves mails that get send.
 function saveMail_send(from, to, subject, mail){
@@ -384,7 +391,7 @@ app.post('/senddraft/:id', (req, res) => {
 
 app.post('/login', (req, res) => {
   const email = req.body.email;
-  const password = req.body.password;
+  const password = createHash(req.body.password);
   
   queryString = "SELECT * FROM users WHERE email = '" + email + "'";
   
@@ -416,7 +423,7 @@ app.post('/login', (req, res) => {
 app.post('/register', (req, res) => {
     const alphamail = "@alphamail.com"
     const eml = req.body.email + alphamail;
-    const psw = req.body.password;
+    const psw = createHash(req.body.password)
 
     queryString = "INSERT INTO users (email, psw) VALUES (?, ?)"
     getConnection().query(queryString, [eml, psw], (err, results, fields) =>{
