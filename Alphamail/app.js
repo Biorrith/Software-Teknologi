@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 var crypto = require('crypto');
-var hash = crypto.createHash('sha256')
+
 
 
 // app.use(express.urlencoded({ extended: false}));
@@ -62,6 +62,7 @@ function saveMail_recieved(from, to, subject, mail){
 }
 
 function createHash(string_input){
+  const hash = crypto.createHash('sha256')
   hash.update(string_input);
   return hash.digest('hex');
 }
