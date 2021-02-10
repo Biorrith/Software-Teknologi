@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Alphamail</title>
+        <link href="/assets/main.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="table-data">
+            
+            <table border="1">
+
+                <%
+                if(userData.length!=0){
+                    var i=1;
+                    userData.forEach(function(data){%>
+                
+                        <label style = "width: 1000px; position:relative; left:20px;">From</label>
+                        <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" placeholder="To" value="<%=data.sender%>" name = "to" readonly></br>     
+
+                        <label style = "width: 1000px; position:relative; left:20px;">Subject</label>
+                        <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" placeholder="Subject" value="<%=data.sbjt%>" name = "subject" readonly></br>
+
+                        <label style = "position:relative; left:20px;">Body</label>
+                        <textarea style = "width: 1000px; position:relative; left:20px; top:-15px" name="body" rows="5" cols="5" readonly><%=data.mail_body%></textarea></br>
+
+                        <button style = "position:relative; left:20px; width:150px; top:-15px" onclick="window.location.href='/deletein/<%=data.id%>'">Delete</button></br>
+                
+                        <!-- <tr>
+                    <td><%=data.sender %></td>
+                    <td><%=data._time %></td>
+                    <td><%=data.sbjt %></td>
+                    <td><%=data.mail_body %></td>
+                    <td><a href="/deletein/<%=data.id%>">Delete</a></td>
+                </tr> -->
+                        
+                <button style = "width: 150px; position:relative; left:20px; top:-5px;" onclick="reply()">Reply</button></br>
+                <div id="Reply" style="display:none">
+                    <form action="/send" method ="POST">
+                        <label style = "width: 1000px; position:relative; left:20px;">To</label>
+                        <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" placeholder="To" value="<%=data.sender%>" name = "to" readonly></br>     
+
+                        <label style = "width: 1000px; position:relative; left:20px;">Subject</label>
+                        <input type="text" style = "width: 1000px; position:relative; left:20px; top:-15px;" placeholder="Subject" value="<%=data.sbjt%>" name = "subject" readonly></br>
+
+                        <label style = "position:relative; left:20px;">Body</label>
+                        <textarea style = "width: 1000px; position:relative; left:20px; top:-15px" name="body" rows="5" cols="5"></textarea></br>
+                        
+                        <button style = "width: 150px; position:relative; left:20px; top:-15px;">Send</button>
+                    </form>
+                </div>
+                <button style = "width: 150px; position: relative; left:20px; top:5px" onclick="forward()">Forward</button></br>
+                <div id="Forward" style="display:none">
+                    <form action="/send" method ="POST">
+                        <label style = "width: 1000px; position:relative; left:20px; top:-5px;">To</label>
+                        <input type="text" style = "width: 1000px; position:relative; left:20px; top:-20px;" maxlength="255" placeholder="To" name = "to" required></br>     
+                        <input placeholder="Subject" type="hidden" value="<%=data.sbjt%>" name = "subject" hidden>
+                        <input placeholder="Body" type="hidden" value="<%=data.mail_body%>" name="body" hidden>
+                        <button style = "width: 150px; position:relative; left:20px; top:-5px;" >Send</button>
+                    </form>
+                </div>
+                <script>function reply() {
+                    var x = document.getElementById("Reply");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+                function forward() {
+                    var x = document.getElementById("Forward");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+                </script>
+                <%  i++; }) %>
+                <% } else{ %>
+                <tr>
+                    <td colspan="7">No Data Found</td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+    </html>
+
+<button style = " width: 150px; position:relative; left:20px; width:150px; top:-5px;" onclick="window.location.href='/homepage'">Go to homepage</button></br>
+<button style = "width: 150px; position:relative; left:20px; width:150px; top:5px" onclick="window.location.href='/inbox'">Go to inbox</button></br>
