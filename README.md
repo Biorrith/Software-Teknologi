@@ -30,6 +30,8 @@ Now we need to install the libraries we used for developing the server. Install 
 	$ npm install express-session
 	
 	$ npm install js-sha256
+	
+	$ npm install ejs
 
 With the libraries installed, we now move on to install the database. For this, we use mySQL. 
 Install the bottom version on [this link.](https://dev.mysql.com/downloads/installer/)
